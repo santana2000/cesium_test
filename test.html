@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cesiumjs.org/releases/1.55/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesiumjs.org/releases/1.55/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <style>
+        .view{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="view"  id="cesiumContainer" style="width:49%; height:900px"></div>
+<div class="view" id="cesiumContainer2" style="width:49%; height:900px"></div>
+<script>
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkOGJjY2VkMC02YzQ4LTQxY2QtYjk0Zi1kY2U1ZmZjNmI1ZTMiLCJpZCI6OTEwMywic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTU1MzUwMDU3NH0.WjnJFFgxpllsxX1dMJjcFuQxbFH8i6Xv84ndEstHZVg';
+
+
+    var viewer = new Cesium.Viewer('cesiumContainer');
+    var entity = viewer.entities.add({
+
+        position : Cesium.Cartesian3.fromDegrees(117.1488261223, 34.2229096321),
+        model : {
+            uri : './models/bejo.gltf'
+        }
+    });
+    // viewer.trackedEntity = entity;
+
+
+    var viewer2 = new Cesium.Viewer('cesiumContainer2');
+    var entity2 = viewer2.entities.add({
+
+        position : Cesium.Cartesian3.fromDegrees(117.1488261223, 34.2229096321),
+        model : {
+            uri : './models/bejo.gltf'
+        }
+    });
+    viewer2.trackedEntity = entity2;
+
+   /* LayUI Tree 扩展：
+    1，增加搜索栏
+    2，折叠图标和叶子图标自定义
+    3，增加复选框和事件回调
+    4，增加右击菜单按钮*/
+
+
+</script>
+</body>
+</html>
